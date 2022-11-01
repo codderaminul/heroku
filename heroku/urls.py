@@ -20,5 +20,5 @@ import myapp
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include(myapp.urls)),
+    path('home/', include(myapp.urls)),
 ]
