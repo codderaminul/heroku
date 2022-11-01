@@ -7,7 +7,41 @@
     <link href="{%static 'myapp/css/style.css'%}" rel="stylesheet" type="text/css"/>
 </head>
 <body>
+  {% if messages %}
+        {% for message in messages %}
+        <h5 class="text-success">{{message}}</h5>
+        {% endfor %}
+  {% endif %}
   <h3>This is index page</h3>
+  <form action="" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      {% for field in form.visible_fields %}
+          <div class="fieldWrapper form-group">
+              <h4 class="text-danger mt-4">{{ field.errors }}</h4>
+              <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+               {{ field}}
+          </div>
+      {% endfor %}
+      <input class="btn btn-primary w-100 mt-3 mb-5" type="submit" value="Save">
+  </form>
+
+    <br>
+    <br>
     <img src="{% static 'myapp/img/img.jpg' %}"/>
+
+  <table>
+      <tr>
+          <th>Serial</th>
+          <th>Name</th>
+          <th>Image</th>
+      </tr>
+      {% for data in all_data %}
+      <tr>
+          <td>{{forloop.counter}}</td>
+          <td><h4>{{ data.imgname }}</h4></td>
+          <td><img src="{{ data.myImg }}" alt="Image"/></td>
+      </tr>
+      {% endfor %}
+  </table>
 </body>
 </html>
