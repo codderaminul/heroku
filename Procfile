@@ -1,1 +1,1 @@
-web: gunicorn crud_django.wsgi --log-file -
+web: gunicorn heroku.wsgi --log-file -
