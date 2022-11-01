@@ -80,8 +80,12 @@ WSGI_APPLICATION = 'heroku.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd9bndcr0h3ro4l',
+        'USER': 'tsfzgebojlblot',
+        'PASSWORD': '9ebbe2e773e464f6be4c0199f321255f4558df5c51b2067e989b7c7032d3e0c1',
+        'HOST': 'ec2-54-82-205-3.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
