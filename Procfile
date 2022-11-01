@@ -1,1 +1,1 @@
-waitress-serve --port=$PORT heroku.wsgi:application
+web: gunicorn crud_django.wsgi --log-file -
